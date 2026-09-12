@@ -14,6 +14,14 @@ export const apiBaseUrl = process.env.CODESPACE_NAME
 
 app.use(express.json());
 
+app.get('/', (_request, response) => {
+  response.json({
+    name: 'OctoFit Tracker API',
+    apiBaseUrl,
+    endpoints: ['/api/health', '/api/users', '/api/teams', '/api/activities', '/api/leaderboard', '/api/workouts'],
+  });
+});
+
 app.get('/api/health', (_request, response) => {
   response.json({ status: 'ok', apiBaseUrl });
 });
