@@ -1,0 +1,20 @@
+import CollectionPage from './CollectionPage'
+
+export default function Workouts() {
+  return (
+    <CollectionPage
+      collection="workouts"
+      title="Workouts"
+      description="Choose a focused session that meets you where you are."
+      emptyMessage="No workouts have been published yet."
+      renderItem={(workout) => (
+        <article className="collection-card" key={workout._id || workout.id}>
+          <div className="card-kicker">{workout.fitnessLevel || 'All levels'}</div>
+          <h2>{workout.title || 'Untitled workout'}</h2>
+          <p>{workout.description || 'No description provided.'}</p>
+          <small>{workout.durationMinutes || 0} minutes</small>
+        </article>
+      )}
+    />
+  )
+}
