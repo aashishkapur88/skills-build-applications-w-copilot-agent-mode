@@ -14,6 +14,7 @@ function getItems(payload) {
   for (const key of ['data', 'items', 'results', 'records']) {
     if (Array.isArray(payload?.[key])) return payload[key]
   }
+  console.warn('Unable to find items in payload:', payload)
 
   return []
 }
