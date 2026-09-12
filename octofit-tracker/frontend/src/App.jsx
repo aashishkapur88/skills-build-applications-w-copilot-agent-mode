@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { Navigate, NavLink, Route, Routes } from 'react-router-dom'
 import Activities from './components/Activities'
 import Leaderboard from './components/Leaderboard'
 import Teams from './components/Teams'
@@ -39,7 +39,7 @@ export default function App() {
         </NavLink>
         <nav aria-label="Main navigation">
           {navigation.map(([path, label]) => (
-            <NavLink key={path} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to={path}>
+            <NavLink key={path} end={path === '/'} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to={path}>
               {label}
             </NavLink>
           ))}
@@ -53,6 +53,7 @@ export default function App() {
           <Route path="/teams" element={<Teams />} />
           <Route path="/users" element={<Users />} />
           <Route path="/workouts" element={<Workouts />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
     </div>
