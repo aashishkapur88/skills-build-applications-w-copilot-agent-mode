@@ -1,5 +1,6 @@
 import CollectionPage from './CollectionPage'
 
+// API endpoint: https://${CODESPACE_NAME}-8000.app.github.dev/api/workouts
 export default function Workouts() {
   return (
     <CollectionPage

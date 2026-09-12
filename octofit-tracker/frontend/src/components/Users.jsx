@@ -1,5 +1,6 @@
 import CollectionPage from './CollectionPage'
 
+// API endpoint: https://${CODESPACE_NAME}-8000.app.github.dev/api/users
 export default function Users() {
   return (
     <CollectionPage
